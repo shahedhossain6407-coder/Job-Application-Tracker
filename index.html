@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind & daisyui  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google-font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <title>Job-Application-Tracker</title>
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+  </head>
+  <body>
+    <header class="w-[80%] mx-auto">
+        <h1 class="text-black my-5 font-bold text-2xl">Job Application Tracker</h1>
+        <div class="card-container flex justify-between">
+            <div class=" bg-gray-50  pr-50 pl-2 py-2">
+                <p class="text-sm">Total</p>
+                <p id="total" class="font-bold">0</p>
+            </div>
+            <div class=" bg-gray-50 pr-50 pl-2 py-2">
+                <p class="text-sm">Interview</p>
+                <p id="interview" class="font-bold text-green-300">0</p>
+            </div>
+            <div class=" bg-gray-50  pr-50 pl-2 py-2">
+                <p class="text-sm">Rejected</p>
+                <p id="rejected" class="font-bold text-red-300">0</p>
+            </div>
+        </div>
+       </header>
+       <main class="w-[80%] mx-auto ">
+        <hr class="my-10 text-gray-300">
+        <h1 class="font-bold">Available Jobs</h1>
+        <div class="flex gap-4 py-6">
+            <button class=" bg-blue-300 rounded-[5px] py-2 px-5 " id="all-btn">All</button>
+            <button class="bg-gray-50 rounded-[5px] py-2 px-5" id="interview-btn">Interview</button>
+            <button class="bg-gray-50 rounded-[5px] py-2 px-5" id="rejected-btn">Rejected</button>
+        </div>
+       </main>
+       <section id="card-section" class="w-[80%] mx-auto ">
+        <div class="card-container  grid grid-cols-1 gap-10">
+            <div class="card bg-gray-50 space-y-4 px-10 py-10 ">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+            <div class="card bg-gray-50 space-y-4 px-10 py-10">
+                <h1 class="font-bold text-2xl">Mobile First Corp</h1>
+                <p class="text-neutral/50 text-2xl">React Native Developer</p>
+                <p class=" text-neutral/50 text-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class=" text-2xl rounded-md bg-blue-100 py-2 px-4 w-fit">Not Applied</p>
+                <p class="text-[20px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="twin-btn flex gap-4">
+                    <button id="card-interview-btn" class=" text-[20px] border-2 border-green-500 px-4 py-2 font-semibold text-green-500 rounded-md" >interview</button>
+                    <button id="card-rejected-btn" class="text-[20px] border-2 border-red-500 px-4 py-2 font-semibold text-red-500 rounded-md">Rejected</button>
+                </div>
+            </div>
+        </div>
+    
+       </section>
+  </body>
+</html>
