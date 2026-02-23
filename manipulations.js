@@ -34,21 +34,21 @@ function onlyClick(id){
     interviewBtn.classList.remove(`bg-blue-300`);
     rejectedBtn.classList.remove(`bg-blue-300`);
     
-    currentStudus = id
+    currentStudus = id;
 
     const selected = document.getElementById(id);
     selected.classList.remove(`bg-gray-50`);
     selected.classList.add(`bg-blue-300`);
 
     if(id == `interview-btn`){
-    cardContainer.classList.add(`hidden`)
+    cardContainer.classList.add(`hidden`);
     filterSection.classList.remove(`hidden`);
 
     if(interviewList.length === 0){
-      alertItem.classList.remove(`hidden`)
+      alertItem.classList.remove(`hidden`);
     }
     else{
-      alertItem.classList.add(`hidden`)
+      alertItem.classList.add(`hidden`);
     }
 
     jobCount.innerText = interviewList.length;
@@ -58,24 +58,24 @@ function onlyClick(id){
     filterSection.classList.add(`hidden`);
     
     jobCount.innerText = cardContainer.children.length ;
-    calculation()
+    calculation();
     if(rejectedList.length === 0 && interviewList.length === 0){
-      alertItem.classList.add(`hidden`)
+      alertItem.classList.add(`hidden`);
     }else if(rejectedList.length>interviewList.length || rejectedList.length<interviewList.length ){
-      alertItem.classList.add(`hidden`)
+      alertItem.classList.add(`hidden`);
     }
    }
 
     if(id==`rejected-btn`){
-    cardContainer.classList.add(`hidden`)
+    cardContainer.classList.add(`hidden`);
     filterSection.classList.remove(`hidden`);
     if(rejectedList.length === 0){
-      alertItem.classList.remove(`hidden`)
+      alertItem.classList.remove(`hidden`);
     }else{
-      alertItem.classList.add(`hidden`)
+      alertItem.classList.add(`hidden`);
     }
     jobCount.innerText = rejectedList.length;
-    renderRejected()
+    renderRejected();
   }
 
 }
@@ -86,12 +86,12 @@ mainContainer.addEventListener(`click`,function(event){
   if(event.target.closest(`#delete`)){
   const card = event.target.closest(`.card`);
   if(card){
-    card.remove()
-    calculation()
-    document.getElementById(`jobCount`).innerText = cardContainer.children.length
+    card.remove();
+    calculation();
+    document.getElementById(`jobCount`).innerText = cardContainer.children.length;
   }
   if(cardContainer.children.length == 0 ){
-    alertItem.classList.remove(`hidden`)
+    alertItem.classList.remove(`hidden`);
   }}
 
   if(event.target.closest(`#card-interview-btn`)){
@@ -104,7 +104,7 @@ mainContainer.addEventListener(`click`,function(event){
     const applyStutus = parentNodes.querySelector(`.apply-studus`).innerText;
     const description = parentNodes.querySelector(`.description`).innerText;
      
-    parentNodes.querySelector(`.apply-studus`).innerText = `Interview`
+    parentNodes.querySelector(`.apply-studus`).innerText = `Interview`;
 
     const cardInfo = {
     companyName,
@@ -117,7 +117,7 @@ mainContainer.addEventListener(`click`,function(event){
   const companyExist = interviewList.find(item=> item.companyName == cardInfo.companyName)
 
   if(!companyExist){
-    interviewList.push(cardInfo)
+    interviewList.push(cardInfo);
   }
   rejectedList = rejectedList.filter(item=> item.companyName != cardInfo.companyName ) //don`t understand
   if(currentStudus == `interview-btn`){
@@ -125,13 +125,13 @@ mainContainer.addEventListener(`click`,function(event){
 
   }
   else if(currentStudus == `rejected-btn`){
-    renderRejected()
+    renderRejected();
   }
 
   else{
        parentNodes.querySelector(`.apply-studus`).innerText = `Interview`;
      }
-  calculation()
+  calculation();
  }
     else if(event.target.closest(`#card-rejected-btn`)){
    
@@ -143,7 +143,7 @@ mainContainer.addEventListener(`click`,function(event){
     const applyStutus = parentNodes.querySelector(`.apply-studus`).innerText;
     const description = parentNodes.querySelector(`.description`).innerText;
      
-    parentNodes.querySelector(`.apply-studus`).innerText = `Rejected`
+    parentNodes.querySelector(`.apply-studus`).innerText = `Rejected`;
 
     const cardInfo = {
     companyName,
@@ -154,14 +154,14 @@ mainContainer.addEventListener(`click`,function(event){
   }
   const companyExist = rejectedList.find(item=> item.companyName == cardInfo.companyName)
   if(!companyExist){
-    rejectedList.push(cardInfo)
+    rejectedList.push(cardInfo);
   }
   interviewList = interviewList.filter(item=> item.companyName != cardInfo.companyName )  //don`t understand
   if(currentStudus == `rejected-btn`){
     renderRejected(); //don`t understand
   }
   else if(currentStudus == `interview-btn`){
-    renderInterview()
+    renderInterview();
   }
   else {
     parentNodes.querySelector(`.apply-studus`).innerText = `Rejected`;
