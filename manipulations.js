@@ -80,9 +80,9 @@ function onlyClick(id){
 
 }
 
-// Call Maincontainer to get specipic interviewBtn or rejectedBtn information 
+  // Call Maincontainer to get specipic interviewBtn or rejectedBtn information 
 
-mainContainer.addEventListener(`click`,function(event){
+   mainContainer.addEventListener(`click`,function(event){
   if(event.target.closest(`#delete`)){
   const card = event.target.closest(`.card`);
   if(card){
@@ -169,13 +169,14 @@ mainContainer.addEventListener(`click`,function(event){
   calculation()
  
   }
- })
+   })
 
-// buttonClick and show the empty array informatation and than count 
-const filterSection = document.getElementById(`filter-section`);
+   // buttonClick and show the empty array informatation and than count 
+   const filterSection = document.getElementById(`filter-section`);
 
-function renderRejected(){
-    filterSection.innerHTML = ``
+   function renderRejected(){
+
+   filterSection.innerHTML = ``
 
     // loop for RejectedviewList
 
