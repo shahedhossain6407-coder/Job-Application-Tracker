@@ -1,6 +1,7 @@
 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-answer :
- getElementById ==>  getElementById hocche dom e thaka ekti method jeti diye html e thaka ekti eliment_e thaka specific id khujte help kore abong eti use korar maddhome oy id k call diye bhibonno logic build kora jai,
+
+ answer :
+getElementById ==>  getElementById hocche dom e thaka ekti method jeti diye html e thaka ekti eliment_e thaka specific id khujte help kore abong eti use korar maddhome oy id k call diye bhibonno logic build kora jai,
  output hishebe ekti object provite kore and jdi kicho na fai tahole null diye dey.
 
  getElementByClassName ==>  getElementByClassName hocche html e thka kono element_er class name khuje ber kora,jehtu ekti class onk gula element e thakte pare thai eti output hishebe ekti HTMLcollecttion provite kore ja
