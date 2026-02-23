@@ -1,45 +1,48 @@
-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+1. Difference between getElementById, getElementsByClassName, and querySelector/querySelectorAll
+getElementById: This is a DOM method used to find a specific element by its unique ID. It helps in building logic by calling that specific ID.
 
- answer :
-getElementById ==>  getElementById hocche dom e thaka ekti method jeti diye html e thaka ekti eliment_e thaka specific id khujte help kore abong eti use korar maddhome oy id k call diye bhibonno logic build kora jai,
- output hishebe ekti object provite kore and jdi kicho na fai tahole null diye dey.
+Output: It returns a single Object. If the element is not found, it returns null.
 
- getElementByClassName ==>  getElementByClassName hocche html e thka kono element_er class name khuje ber kora,jehtu ekti class onk gula element e thakte pare thai eti output hishebe ekti HTMLcollecttion provite kore ja
- onk tai array er moto kaj kore , er bishesh shubidha hocche eti live method orthad probhrti te jdi html e kono notun element plus kora hoi tahole eti auto update hoiye jai.
+getElementsByClassName: This is used to find elements by their Class Name. Since one class can be assigned to multiple elements, it returns an HTMLCollection (which acts similarly to an array).
 
- querySelector ==> querySelector hocche ekti CSS selector jeti use kore css er jekhno class catch kora jai ex: docoment.querySelector(`.class`),docoment.querySelector(`#id`).eti ekti static method karon html e probhrtite
- change korle method_e ar change hobe na and arekti shubida hocche ei method condition puron kora 1st element k provide kore.
+Feature: This is a Live method, meaning if new elements are added to the HTML later, this collection updates automatically.
 
- querySelectorAll ==> querySelector at querySelectorAll er moddhe major kono differt nai tbe kicho ta ektu bhinno output provide kore , jemon : querySelector er ketthre condition puron kora 1st element k provide kore but
- querySelectorAll hocche condition puron kora sb gula element k provide kore.
+querySelector: This is a powerful CSS Selector method. You can catch any element using CSS syntax, e.g., document.querySelector(".class") or document.querySelector("#id").
 
-2. How do you create and insert a new element into the DOM?
+Feature: It is Static (the list doesn't auto-update with DOM changes) and it only returns the first element that matches the condition.
 
-  answer :
-  new element create : docoment.createElement(`li`) , Eikhane li name ekti element create kora holo but eikhane shes noi create kora element ti onno kono element_e add krte hbe . ex: ul.appendChild(li);
-  eikhane agee thaka ekti ul list er bhito create kora li ti append hoiye geche.
-  
+querySelectorAll: There is no major logical difference from querySelector, but the output is different.
 
-3.  What is Event Bubbling? And how does it work?
+Output: While querySelector gives only the first match, querySelectorAll returns all elements that match the condition in a NodeList.
 
-  
- event bubbling holo JavaScript DOM-er ekta important concept. eta muloto ekta process jekhane ekta event (dhoren click event) ekta element theke onno element-e chhoriye pore.
- Shohoj bhabe bolle, jokhon apni kono element-e (dhoren ekta button-e) click koren, tokhon shei click event-ta shudhu oi button-er moddhe thake na; eta bubble ba budbud-er moto dhire dhire upor-er dike uthte thake ebong tar shob Parent element guloke touch kore,
- Jokhon apni kono nested (ekter vetore arekta) element-e click koren, tokhon event ta niche dewa sequence ba dhape dhape kaj korte thake :
- Target Element => prothome thik je element-e click kora hoyeche, shei element-ta event-ta handle kore.
- Parent Element => erpor event-ta tar thik upor-er Parent element-e chole jay.
- Top Level => ebhabe dhap-e dhap-e eta Document ebong shesh porjonto Window object porjonto pouchhay.
- 
-4. What is Event Delegation in JavaScript? Why is it useful?
+2. How to create and insert a new element into the DOM?
+Create: To create a new element, we use document.createElement("tagName"). For example, document.createElement("li") creates a list item in memory.
 
- event delegation holo JavaScript-er emon ekta technique jekhane amra prothtekta child element_e (dhoren onek gulo button ba list item) alada alada bhabe EventListener jog na kore, tader main Parent Element-e matro ekta listener jog kore.
-eta muloto Event Bubbling-er shubidha niye kaj kore. Jehetu child element-e click korle shei event-ta bubble hoye parent porjonto pouchhay, tai amra parent element-e boshei shei click-ta dhorte pari.
+Insert: Creating it isn't enough; you must attach it to an existing element.
 
-5. What is the difference between preventDefault() and stopPropagation() methods?
+Example: ul.appendChild(li); — here, the newly created li is added (appended) inside an existing ul list.
 
-   preventDefault() :
-   ei method-ta use kora hoy kono ekta element-er tader nijer  ba behavior  bondho korar jonno.ex:* Kono <a>  tag-e click korle sheta onno page-e niye jay. preventDefault()) use korle sheta ar jabe na.
-   
-   stopPropagation() :
-   Ei method-ta use kora hoy Event Bubbling bondho korar jonno. ex: dhoren ekta <div> er bhetore ekta <button> ache. Button-e click korle event-_ta bubble hoye div-e chole jay. stopPropagation() use korle click-ta shudhu button-er moddhei thakbe, div-e jabe na.
-   
+3. What is Event Bubbling? And how does it work?
+Event Bubbling is a vital JavaScript DOM concept. It is the process where an event (like a click) spreads from one element to others. Simply put, when you click an element (like a button), the event isn't restricted to just that button; it rises like a bubble to the Parent elements.
+
+How it works (The Sequence):
+
+Target Element: First, the exact element you clicked handles the event.
+
+Parent Element: Then, the event moves up to its immediate parent.
+
+Top Level: It continues rising through the levels (body, html, document) until it finally reaches the Window object.
+
+4. What is Event Delegation? Why is it useful?
+Event Delegation is a technique where instead of adding individual Event Listeners to every child element (like multiple buttons or list items), we add just one listener to the main Parent Element.
+
+It works by taking advantage of Event Bubbling. Since a click on a child "bubbles up" to the parent, we can catch and manage that click from the parent level. This makes the code more efficient and handles dynamically added elements automatically.
+
+5. Difference between preventDefault() and stopPropagation()
+preventDefault(): This method is used to stop an element's default behavior.
+
+Example: Clicking a link usually takes you to another page; using preventDefault() stops that redirection.
+
+stopPropagation(): This method is used specifically to stop Event Bubbling.
+
+Example: If a button is inside a div and you click the button, the event normally bubbles up to the div. Using stopPropagation() ensures the click stays only on the button and does not trigger the div's event.
