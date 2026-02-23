@@ -23,7 +23,7 @@
   <body>
     <header class="w-[80%] mx-auto">
         <h1 class="text-black my-5 font-bold text-2xl">Job Application Tracker</h1>
-        <div class="card-container flex justify-between">
+        <div class="card-container grid grid-cols-1 gap-10 justify-between  md:grid-cols-3   ">
             <div class=" bg-gray-50  pr-50 pl-2 py-2">
                 <p class="text-sm">Total</p>
                 <p id="total-job" class="font-bold">0</p>
@@ -40,13 +40,15 @@
        </header>
        <main class="w-[80%] mx-auto ">
         <hr class="my-10 text-gray-300">
-        <h1 class="font-bold">Available Jobs</h1>
-        <h1  class="flex justify-end font-bold"><span id="jobCount" class="pr-2" >8</span>of 8 Jobs</h1>
+        <div class="flex justify-between ">
+            <div><h1 class="font-bold">Available Jobs</h1></div>
+            <div><h1  class=" font-bold"><span id="jobCount" class="pr-2" >8</span>of 8 Jobs</h1></div>
        
-        <div class="flex gap-4 py-6">
-            <button onclick="onlyClick(`all-btn`)" class=" bg-blue-300 rounded-[5px] py-2 px-5 " id="all-btn">All</button>
-            <button onclick="onlyClick(`interview-btn`)" class="bg-gray-50 rounded-[5px] py-2 px-5" id="interview-btn">Interview</button>
-            <button onclick="onlyClick(`rejected-btn`)" class="bg-gray-50 rounded-[5px] py-2 px-5" id="rejected-btn">Rejected</button>
+        </div>
+        <div class="grid grid-cols-1 gap-4 py-6 md:grid-cols-3">
+            <button onclick="onlyClick(`all-btn`)" class=" bg-blue-300 rounded-[5px] py-2 px-3 " id="all-btn">All</button>
+            <button onclick="onlyClick(`interview-btn`)" class="bg-gray-50 rounded-[5px] py-2 px-3" id="interview-btn">Interview</button>
+            <button onclick="onlyClick(`rejected-btn`)" class="bg-gray-50 rounded-[5px] py-2 px-3" id="rejected-btn">Rejected</button>
         </div>
       
         <!-- filter-section  -->
@@ -54,7 +56,7 @@
 
          </section>
        <section  class="card-section w-[80%] mx-auto ">
-        <div id="card-container" class="grid grid-cols-1  sm:grid-cols-2 gap-10 ">
+        <div id="card-container" class="grid grid-cols-1  md:grid-cols-2 gap-10  ">
             
             <div class="card bg-gray-50 space-y-4 px-10 py-10  ">
                 <div class="right flex justify-end">
